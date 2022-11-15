@@ -1,14 +1,14 @@
 version: '3'
 services:
   eureka-service:
-    image: eureka-service:1.0
+    image: eureka-service:0.0.1-SNAPSHOT
     container_name: eureka-service
     expose:
     - "8761"
     ports:
     - 8761:8761
   employee-service:
-    image: employee-service:1.0
+    image: employee-service:0.0.1-SNAPSHOT
     container_name: employee-service
     ports:
     - 8380:8380
