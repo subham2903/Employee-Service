@@ -1,0 +1,1 @@
+INSERT INTO emp(id, name,dob) VALUES (101, 'kunal','2001-01-01');

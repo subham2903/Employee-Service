@@ -1,0 +1,20 @@
+version: '3'
+services:
+  eureka-service:
+    image: eureka-service:1.0
+    container_name: eureka-service
+    expose:
+    - "8761"
+    ports:
+    - 8761:8761
+  employee-service:
+    image: employee-service:1.0
+    container_name: employee-service
+    ports:
+    - 8380:8380
+    environment:
+      - JAVA_OPTS=
+            -DEUREKA_SERVER=http://eureka-service:8761/eureka  -DDB_USER=root -DDB_PASSWORD=1234 -DJDBC=jdbc:mariadb://localhost:3306/employeeservice
+
+    links:
+       - eureka-service
